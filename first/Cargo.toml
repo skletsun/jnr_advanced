@@ -1,0 +1,11 @@
+[package]
+name = "first"
+version = "0.1.0"
+authors = ["Sergey Kletsun <sergey.kletsun@gmail.com>"]
+
+[lib]
+crate-type = ["dylib"]
+
+[dependencies]
+second = { path = "../second" }
+log = "0.4"
