@@ -1,10 +1,12 @@
 [package]
-name = "first"
+name = "wrapper"
 version = "0.1.0"
 authors = ["Sergey Kletsun <sergey.kletsun@gmail.com>"]
+edition = "2018"
 
 [lib]
 crate-type = ["dylib"]
 
 [dependencies]
 second = { path = "../second" }
+jni = "0.10.2"

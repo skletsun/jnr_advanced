@@ -7,4 +7,3 @@ authors = ["Sergey Kletsun <sergey.kletsun@gmail.com>"]
 crate-type = ["dylib"]
 
 [dependencies]
-log = "0.4"

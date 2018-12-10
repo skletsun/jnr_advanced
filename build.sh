@@ -4,6 +4,7 @@
 rm -fR target
 rm -r ./libfirst.dylib
 rm -r ./libsecond.dylib
+rm -r ./libwrapper.dylib
 
 # Build java code first.
 mvn compile assembly:single
@@ -31,6 +32,7 @@ cargo build --all
 
 cp -v ./target/debug/libfirst.dylib .
 cp -v ./target/debug/libsecond.dylib .
+cp -v ./target/debug/libwrapper.dylib .
 
 # And execute every test separately...
 java -jar ./target/jnr-advanced-1.0-SNAPSHOT-jar-with-dependencies.jar

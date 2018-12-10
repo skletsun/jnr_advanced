@@ -2,19 +2,8 @@ package jni.proto;
 
 import jnr.ffi.Runtime;
 import jnr.ffi.*;
-import jnr.ffi.annotations.Delegate;
 
 public class Main {
-    public interface Callback {
-        @Delegate int call(int value);
-    }
-
-    public final static class Identity implements Callback {
-        public int call(int value) {
-            return value;
-        }
-    }
-
     public interface First {
         int add(int a, int b);
         // this one dynamically depends on second::mult(a, b)
@@ -49,6 +38,8 @@ public class Main {
         Runtime runtime = Runtime.getRuntime(secondLib);
         System.out.print("Java: Second.sub(4, 2) =>");
         System.out.println(secondLib.sub(4, 2));
+        System.out.print("Java: JniWrapper.div(42, 21) =>");
+        System.out.println(new JniWrapper().div(42, 21));
     }
 
     private static void loadAndTestFirst() {
